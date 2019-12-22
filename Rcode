@@ -1,5 +1,178 @@
 THIS WILL BE FINAL RCODE SCRIPT
 
+system("defaults write org.R-project.R force.LANG en_US.UTF-8") #necessary to run github package
+
+library(shiny)
+library(plotly)
+library(devtools)
+library(patchwork)
+
+devtools::install_github("mattflor/chorddiag")
+
+library('chorddiag')
+library(readxl)
+
+#2018
+provincie2018 <- read_excel("Downloads/provinciesmigra.xlsx", 
+                            sheet = "2018", col_names = FALSE, col_types = c("numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric"))
+
+
+names(provincie2018) <- NULL
+prov2018 <- as.matrix(provincie2018)
+prov2018
+
+ProvincesNL <- c("Groningen", "Friesland", "Drenthe", "Overijssel", "Flevoland", "Gelderland", "Utrecht", "Noord-Holland", "Zuid-Holland", "Zeeland", "Noord-Brabant", "Limburg")
+dimnames(prov2018) <- list(have = ProvincesNL , prefer = ProvincesNL)
+groupColors <- c("#FF0000FF", "#FF8000FF", "#FFFF00FF", "#80FF00FF", "#00FF00FF", "#00FF80FF", "#00FFFFFF",
+                 "#0080FFFF", "#0000FFFF", "#8000FFFF", "#FF00FFFF", "#FF0080FF") 
+
+Chord2018 <- chorddiag(prov2018, groupColors = groupColors, groupnamePadding = 20)
+Chord2018
+
+#2017
+provincie2017 <- read_excel("Downloads/provinciesmigra.xlsx", 
+                            sheet = "2017", col_names = FALSE, col_types = c("numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric"))
+
+names(provincie2017) <- NULL
+prov2017 <- as.matrix(provincie2017)
+prov2017
+
+ProvincesNL <- c("Groningen", "Friesland", "Drenthe", "Overijssel", "Flevoland", "Gelderland", "Utrecht", "Noord-Holland", "Zuid-Holland", "Zeeland", "Noord-Brabant", "Limburg")
+dimnames(prov2017) <- list(have = ProvincesNL , prefer = ProvincesNL)
+groupColors <- c("#FF0000FF", "#FF8000FF", "#FFFF00FF", "#80FF00FF", "#00FF00FF", "#00FF80FF", "#00FFFFFF",
+                 "#0080FFFF", "#0000FFFF", "#8000FFFF", "#FF00FFFF", "#FF0080FF") 
+
+Chord2017 <- chorddiag(prov2017, groupColors = groupColors, groupnamePadding = 20)
+Chord2017
+
+#2016
+provincie2016 <- read_excel("Downloads/provinciesmigra.xlsx", 
+                            sheet = "2016", col_names = FALSE, col_types = c("numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric"))
+
+names(provincie2016) <- NULL
+prov2016 <- as.matrix(provincie2016)
+prov2016
+
+ProvincesNL <- c("Groningen", "Friesland", "Drenthe", "Overijssel", "Flevoland", "Gelderland", "Utrecht", "Noord-Holland", "Zuid-Holland", "Zeeland", "Noord-Brabant", "Limburg")
+dimnames(prov2016) <- list(have = ProvincesNL , prefer = ProvincesNL)
+groupColors <- c("#FF0000FF", "#FF8000FF", "#FFFF00FF", "#80FF00FF", "#00FF00FF", "#00FF80FF", "#00FFFFFF",
+                 "#0080FFFF", "#0000FFFF", "#8000FFFF", "#FF00FFFF", "#FF0080FF") 
+
+Chord2016 <- chorddiag(prov2016, groupColors = groupColors, groupnamePadding = 20)
+Chord2016
+
+#2015
+provincie2015 <- read_excel("Downloads/provinciesmigra.xlsx", 
+                            sheet = "2015", col_names = FALSE, col_types = c("numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric"))
+
+names(provincie2015) <- NULL
+prov2015 <- as.matrix(provincie2015)
+prov2015
+
+ProvincesNL <- c("Groningen", "Friesland", "Drenthe", "Overijssel", "Flevoland", "Gelderland", "Utrecht", "Noord-Holland", "Zuid-Holland", "Zeeland", "Noord-Brabant", "Limburg")
+dimnames(prov2015) <- list(have = ProvincesNL , prefer = ProvincesNL)
+groupColors <- c("#FF0000FF", "#FF8000FF", "#FFFF00FF", "#80FF00FF", "#00FF00FF", "#00FF80FF", "#00FFFFFF",
+                 "#0080FFFF", "#0000FFFF", "#8000FFFF", "#FF00FFFF", "#FF0080FF") 
+
+Chord2015 <- chorddiag(prov2015, groupColors = groupColors, groupnamePadding = 20)
+Chord2015
+
+#2014
+provincie2014 <- read_excel("Downloads/provinciesmigra.xlsx", 
+                            sheet = "2014", col_names = FALSE, col_types = c("numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric"))
+
+names(provincie2014) <- NULL
+prov2014 <- as.matrix(provincie2014)
+prov2014
+
+ProvincesNL <- c("Groningen", "Friesland", "Drenthe", "Overijssel", "Flevoland", "Gelderland", "Utrecht", "Noord-Holland", "Zuid-Holland", "Zeeland", "Noord-Brabant", "Limburg")
+dimnames(prov2014) <- list(have = ProvincesNL , prefer = ProvincesNL)
+groupColors <- c("#FF0000FF", "#FF8000FF", "#FFFF00FF", "#80FF00FF", "#00FF00FF", "#00FF80FF", "#00FFFFFF",
+                 "#0080FFFF", "#0000FFFF", "#8000FFFF", "#FF00FFFF", "#FF0080FF") 
+
+Chord2014 <- chorddiag(prov2014, groupColors = groupColors, groupnamePadding = 20)
+Chord2014
+
+
+#2013
+provincie2013 <- read_excel("Downloads/provinciesmigra.xlsx", 
+                            sheet = "2013", col_names = FALSE, col_types = c("numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric"))
+
+names(provincie2013) <- NULL
+prov2013 <- as.matrix(provincie2013)
+prov2013
+
+ProvincesNL <- c("Groningen", "Friesland", "Drenthe", "Overijssel", "Flevoland", "Gelderland", "Utrecht", "Noord-Holland", "Zuid-Holland", "Zeeland", "Noord-Brabant", "Limburg")
+dimnames(prov2013) <- list(have = ProvincesNL , prefer = ProvincesNL)
+groupColors <- c("#FF0000FF", "#FF8000FF", "#FFFF00FF", "#80FF00FF", "#00FF00FF", "#00FF80FF", "#00FFFFFF",
+                 "#0080FFFF", "#0000FFFF", "#8000FFFF", "#FF00FFFF", "#FF0080FF") 
+
+Chord2013 <- chorddiag(prov2013, groupColors = groupColors, groupnamePadding = 20)
+Chord2013
+
+#2012
+provincie2012 <- read_excel("Downloads/provinciesmigra.xlsx", 
+                            sheet = "2012", col_names = FALSE, col_types = c("numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric"))
+
+names(provincie2012) <- NULL
+prov2012 <- as.matrix(provincie2012)
+prov2012
+
+ProvincesNL <- c("Groningen", "Friesland", "Drenthe", "Overijssel", "Flevoland", "Gelderland", "Utrecht", "Noord-Holland", "Zuid-Holland", "Zeeland", "Noord-Brabant", "Limburg")
+dimnames(prov2012) <- list(have = ProvincesNL , prefer = ProvincesNL)
+groupColors <- c("#FF0000FF", "#FF8000FF", "#FFFF00FF", "#80FF00FF", "#00FF00FF", "#00FF80FF", "#00FFFFFF",
+                 "#0080FFFF", "#0000FFFF", "#8000FFFF", "#FF00FFFF", "#FF0080FF") 
+
+Chord2012 <- chorddiag(prov2012, groupColors = groupColors, groupnamePadding = 20)
+Chord2012
+
+#2011
+provincie2011 <- read_excel("Downloads/provinciesmigra.xlsx", 
+                            sheet = "2011", col_names = FALSE, col_types = c("numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric", "numeric", 
+                                                                             "numeric", "numeric"))
+
+names(provincie2011) <- NULL
+prov2011 <- as.matrix(provincie2011)
+prov2011
+
+ProvincesNL <- c("Groningen", "Friesland", "Drenthe", "Overijssel", "Flevoland", "Gelderland", "Utrecht", "Noord-Holland", "Zuid-Holland", "Zeeland", "Noord-Brabant", "Limburg")
+dimnames(prov2011) <- list(have = ProvincesNL , prefer = ProvincesNL)
+groupColors <- c("#FF0000FF", "#FF8000FF", "#FFFF00FF", "#80FF00FF", "#00FF00FF", "#00FF80FF", "#00FFFFFF",
+                 "#0080FFFF", "#0000FFFF", "#8000FFFF", "#FF00FFFF", "#FF0080FF") 
+
+Chord2011 <- chorddiag(prov2011, groupColors = groupColors, groupnamePadding = 20)
+Chord2011
 
 
 
